@@ -1,1 +1,84 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+@mixin card-set__item($gap: 30px, $item: 4) {
+    flex-basis: calc((100% - $gap * ($item - 1)) / $item);
+  }
+  
+  body {
+    background-color: #252525;
+  }
+  
+  img {
+    display: block;
+    width: 100%;
+    height: 280px;
+  }
+  
+  input[type='text'] {
+    position: relative;
+    background: rgba(217, 217, 217);
+    box-shadow: 0px 0px 4px rgba(136, 133, 133, 0.25),
+      inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    border: none;
+    width: 25%;
+    height: 40px;
+  }
+  
+  button[type='submit'] {
+    position: inherit;
+    cursor: pointer;
+    top: 2px;
+    left: -45px;
+    border: none;
+    background: rgba(217, 217, 217);
+  }
+  
+  button[type='button'] {
+    display: block;
+    cursor: pointer;
+    margin: 50px auto;
+    width: 150px;
+    height: 50px;
+  }
+  
+  .header {
+    display: block;
+    width: 100%;
+    position: fixed;
+  }
+  
+  .search-form {
+    position: relative;
+    text-align: center;
+    padding-top: 30;
+  }
+  
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 100px 15px 0;
+    margin: 0 auto;
+  }
+  .photo-card {
+    background-color: rgba(217, 217, 217);
+    @include card-set__item;
+    border: 0.2px solid #727272;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .info {
+    display: flex;
+    gap: 5px;
+    border-top: 1px solid #727272;
+  }
+  
+  .info-item {
+    display: flex;
+  }
+  
+  .is-hidden {
+    visibility: hidden;
+  }
